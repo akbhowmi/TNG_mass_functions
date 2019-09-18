@@ -1,13 +1,13 @@
 import numpy
 import arepo_package
 
-Nbins = 30
-log_mass_min = 7
+Nbins = 15
+log_mass_min = 8
 log_mass_max = 12
 
 basePath='/n/ghernquist/Illustris/Runs/Illustris-1/'
 
-run='L205n2500TNG'
+run='L25n128TNG'
 
 basePath='/n/hernquistfs3/IllustrisTNG/Runs/'+run+'/output/'
 
