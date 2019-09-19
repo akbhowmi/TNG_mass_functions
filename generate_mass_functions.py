@@ -16,4 +16,4 @@ for desired_redshift,col in zip([0.,3., 5.],['blue','red','green']):
 #    basePath = '/ufrc/lblecha/aklantbhowmick/arepo_runs_aklant/L25_n128/output/'
     category='bh'
     centers,HMF,dHMF,output_redshift=arepo_package.get_mass_function(category,object_type,desired_redshift,basePath,Nbins,log_mass_min,log_mass_max,list_all=False)
-    numpy.save('./'+run+'_'+object_type+'_'+category+'_z%.2f.npy'%desired_redshift,[centers,HMF,dHMF,output_redshift])
+    numpy.save('./'+run+'_'+object_type+'_'+category+'_z%.2f_dyn.npy'%desired_redshift,[centers,HMF,dHMF,output_redshift])
