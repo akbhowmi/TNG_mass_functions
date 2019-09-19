@@ -137,7 +137,7 @@ colormap='Reds_r'
 opacity=1
 panel2=ax.hist2d(numpy.log10(SubhaloMass[mask]*1e10),numpy.log10(SubhaloBHMass[mask]*1e10), bins=(NBINS,NBINS), norm=mpl.colors.LogNorm(),cmap=colormap,alpha=opacity)
 
-mean_SubhaloMass,mean_SubhaloBHMass=mean_plot(SubhaloMass[mask]*1e10,SubhaloBHMass[mask]*1e10,True,True,13)
+mean_SubhaloMass,mean_SubhaloBHMass=mean_plot(SubhaloMass[mask]*1e10,SubhaloBHMass[mask]*1e10,True,True,30)
 ax.plot(mean_SubhaloMass,mean_SubhaloBHMass,linewidth=2)
 
 ax.tick_params(labelsize=30)
@@ -158,7 +158,7 @@ NBINS=20
 mask=(SubhaloStellarMass>1e8/1e10) & (SubhaloBHMass>0)
 panel2=ax.hist2d(numpy.log10(SubhaloMass[mask]*1e10),numpy.log10(SubhaloStellarMass[mask]*1e10), bins=(NBINS,NBINS), norm=mpl.colors.LogNorm(),cmap=colormap,alpha=opacity)
 
-mean_SubhaloMass,mean_SubhaloBHMass=mean_plot(SubhaloMass[mask]*1e10,SubhaloStellarMass[mask]*1e10,True,True,13)
+mean_SubhaloMass,mean_SubhaloBHMass=mean_plot(SubhaloMass[mask]*1e10,SubhaloStellarMass[mask]*1e10,True,True,30)
 ax.plot(mean_SubhaloMass,mean_SubhaloBHMass,linewidth=2)
 
 numpy.save(run+'mean_SM_HM.npy',[mean_SubhaloMass,mean_SubhaloBHMass])
