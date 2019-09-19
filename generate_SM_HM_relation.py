@@ -109,7 +109,7 @@ basePath='/ufrc/lblecha/aklantbhowmick/arepo_runs_aklant/L25_n256/output/'
 
 basePath='/n/ghernquist/Illustris/Runs/Illustris-1/'
 
-run='L205n2500TNG'
+run='L25n128TNG'
 
 basePath='/n/hernquistfs3/IllustrisTNG/Runs/'+run+'/output/'
 
@@ -151,7 +151,7 @@ numpy.save(run+'mean_BHM_HM.npy',[mean_SubhaloMass,mean_SubhaloBHMass])
 
 plt.savefig(run+'BHM_HM.pdf',bbox_inches='tight')
 f,ax=plt.subplots(figsize=(12,10))
-colormap='Blues_r'
+colormap='Reds_r'
 opacity=1
 NBINS=20
 
