@@ -109,7 +109,7 @@ basePath='/ufrc/lblecha/aklantbhowmick/arepo_runs_aklant/L25_n256/output/'
 
 basePath='/n/ghernquist/Illustris/Runs/Illustris-1/'
 
-run='L25n128TNG'
+run='L205n2500TNG'
 
 basePath='/n/hernquistfs3/IllustrisTNG/Runs/'+run+'/output/'
 
@@ -132,7 +132,7 @@ f,ax=plt.subplots(figsize=(12,10))
 opacity=1
 NBINS=20
 
-mask=(SubhaloMass>0) & (SubhaloBHMass>0)
+mask=(SubhaloMass>1e8) & (SubhaloBHMass>0)
 colormap='Reds_r'
 opacity=1
 panel2=ax.hist2d(numpy.log10(SubhaloMass[mask]*1e10),numpy.log10(SubhaloBHMass[mask]*1e10), bins=(NBINS,NBINS), norm=mpl.colors.LogNorm(),cmap=colormap,alpha=opacity)
@@ -141,6 +141,10 @@ mean_SubhaloMass,mean_SubhaloBHMass=mean_plot(SubhaloMass[mask]*1e10,SubhaloBHMa
 ax.plot(mean_SubhaloMass,mean_SubhaloBHMass,linewidth=2)
 
 ax.tick_params(labelsize=30)
+
+ax.set_xlabel('$\log_{10}M_h[M_{\odot}/h]$',fontsize=30)
+ax.set_ylabel('$\log_{10}M_{bh}[M_{\odot}/h]$',fontsize=30)
+
 
 numpy.save(run+'mean_BHM_HM.npy',[mean_SubhaloMass,mean_SubhaloBHMass])
 
@@ -151,12 +155,16 @@ colormap='Blues_r'
 opacity=1
 NBINS=20
 
-mask=(SubhaloStellarMass>0) & (SubhaloBHMass>0)
+mask=(SubhaloStellarMass>1e8) & (SubhaloBHMass>0)
 panel2=ax.hist2d(numpy.log10(SubhaloMass[mask]*1e10),numpy.log10(SubhaloStellarMass[mask]*1e10), bins=(NBINS,NBINS), norm=mpl.colors.LogNorm(),cmap=colormap,alpha=opacity)
 
 mean_SubhaloMass,mean_SubhaloBHMass=mean_plot(SubhaloMass[mask]*1e10,SubhaloStellarMass[mask]*1e10,True,True,13)
 ax.plot(mean_SubhaloMass,mean_SubhaloBHMass,linewidth=2)
 
 numpy.save(run+'mean_SM_HM.npy',[mean_SubhaloMass,mean_SubhaloBHMass])
+
+ax.tick_params(labelsize=30)
+ax.set_xlabel('$\log_{10}M_h[M_{\odot}/h]$',fontsize=30)
+ax.set_ylabel('$\log_{10}M_{*}[M_{\odot}/h]$',fontsize=30)
 
 plt.savefig(run+'SM_HM.pdf',bbox_inches='tight')
