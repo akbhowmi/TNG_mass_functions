@@ -7,7 +7,7 @@ log_mass_max = 12
 
 basePath='/n/ghernquist/Illustris/Runs/Illustris-1/'
 
-run='L25n128TNG'
+run='L205n2500TNG'
 
 basePath='/n/hernquistfs3/IllustrisTNG/Runs/'+run+'/output/'
 
