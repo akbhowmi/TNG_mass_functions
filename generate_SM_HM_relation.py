@@ -109,12 +109,12 @@ basePath='/ufrc/lblecha/aklantbhowmick/arepo_runs_aklant/L25_n256/output/'
 
 basePath='/n/ghernquist/Illustris/Runs/Illustris-1/'
 
-run='L25n128TNG'
+run='L205n2500TNG'
 
 basePath='/n/hernquistfs3/IllustrisTNG/Runs/'+run+'/output/'
 
 subhalo_property='SubhaloBHMass'
-desired_redshift=0.
+desired_redshift=5.
 SubhaloBHMass,output_redshift=arepo_package.get_subhalo_property(basePath, subhalo_property, desired_redshift, list_all=True)
 subhalo_property='SubhaloMass'
 SubhaloMass,output_redshift=arepo_package.get_subhalo_property(basePath, subhalo_property, desired_redshift, list_all=True)
@@ -146,10 +146,10 @@ ax.set_xlabel('$\log_{10}M_h[M_{\odot}/h]$',fontsize=30)
 ax.set_ylabel('$\log_{10}M_{bh}[M_{\odot}/h]$',fontsize=30)
 
 
-numpy.save(run+'mean_BHM_HM.npy',[mean_SubhaloMass,mean_SubhaloBHMass])
+numpy.save(run+'mean_BHM_HM_%.2f.npy'%desired_redshift,[mean_SubhaloMass,mean_SubhaloBHMass])
 
 
-plt.savefig(run+'BHM_HM.pdf',bbox_inches='tight')
+plt.savefig(run+'BHM_HM_%.2f.pdf'%desired_redshift,bbox_inches='tight')
 f,ax=plt.subplots(figsize=(12,10))
 colormap='Reds_r'
 opacity=1
@@ -161,10 +161,10 @@ panel2=ax.hist2d(numpy.log10(SubhaloMass[mask]*1e10),numpy.log10(SubhaloStellarM
 mean_SubhaloMass,mean_SubhaloBHMass=mean_plot(SubhaloMass[mask]*1e10,SubhaloStellarMass[mask]*1e10,True,True,30)
 ax.plot(mean_SubhaloMass,mean_SubhaloBHMass,linewidth=2)
 
-numpy.save(run+'mean_SM_HM.npy',[mean_SubhaloMass,mean_SubhaloBHMass])
+numpy.save(run+'mean_SM_HM_%.2f.npy'%desired_redshift,[mean_SubhaloMass,mean_SubhaloBHMass])
 
 ax.tick_params(labelsize=30)
 ax.set_xlabel('$\log_{10}M_h[M_{\odot}/h]$',fontsize=30)
 ax.set_ylabel('$\log_{10}M_{*}[M_{\odot}/h]$',fontsize=30)
 
-plt.savefig(run+'SM_HM.pdf',bbox_inches='tight')
+plt.savefig(run+'SM_HM_%.2f.pdf'%desired_redshift,bbox_inches='tight')
