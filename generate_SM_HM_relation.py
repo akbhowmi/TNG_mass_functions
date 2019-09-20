@@ -114,7 +114,7 @@ run='L205n2500TNG'
 basePath='/n/hernquistfs3/IllustrisTNG/Runs/'+run+'/output/'
 
 subhalo_property='SubhaloBHMass'
-desired_redshift=5.
+desired_redshift=0.
 SubhaloBHMass,output_redshift=arepo_package.get_subhalo_property(basePath, subhalo_property, desired_redshift, list_all=True)
 subhalo_property='SubhaloMass'
 SubhaloMass,output_redshift=arepo_package.get_subhalo_property(basePath, subhalo_property, desired_redshift, list_all=True)
@@ -138,7 +138,7 @@ opacity=1
 panel2=ax.hist2d(numpy.log10(SubhaloMass[mask]*1e10),numpy.log10(SubhaloBHMass[mask]*1e10), bins=(NBINS,NBINS), norm=mpl.colors.LogNorm(),cmap=colormap,alpha=opacity)
 
 mean_SubhaloMass,mean_SubhaloBHMass=mean_plot(SubhaloMass[mask]*1e10,SubhaloBHMass[mask]*1e10,True,True,30)
-ax.plot(mean_SubhaloMass,mean_SubhaloBHMass,linewidth=2)
+ax.plot(mean_SubhaloMass,mean_SubhaloBHMass,linewidth=2,color='red')
 
 ax.tick_params(labelsize=30)
 
@@ -159,7 +159,7 @@ mask=(SubhaloStellarMass>1e8/1e10) & (SubhaloBHMass>0)
 panel2=ax.hist2d(numpy.log10(SubhaloMass[mask]*1e10),numpy.log10(SubhaloStellarMass[mask]*1e10), bins=(NBINS,NBINS), norm=mpl.colors.LogNorm(),cmap=colormap,alpha=opacity)
 
 mean_SubhaloMass,mean_SubhaloBHMass=mean_plot(SubhaloMass[mask]*1e10,SubhaloStellarMass[mask]*1e10,True,True,30)
-ax.plot(mean_SubhaloMass,mean_SubhaloBHMass,linewidth=2)
+ax.plot(mean_SubhaloMass,mean_SubhaloBHMass,linewidth=2,color='red')
 
 numpy.save(run+'mean_SM_HM_%.2f.npy'%desired_redshift,[mean_SubhaloMass,mean_SubhaloBHMass])
 
