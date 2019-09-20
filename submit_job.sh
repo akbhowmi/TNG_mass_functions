@@ -10,4 +10,4 @@
 #SBATCH --mail-user=akbhowmi@andrew.cmu.edu
 #SBATCH --mail-type=END,FAIL
 
-python generate_SM_HM_relation.py
+python generate_mass_functions.py

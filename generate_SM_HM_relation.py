@@ -109,7 +109,7 @@ basePath='/ufrc/lblecha/aklantbhowmick/arepo_runs_aklant/L25_n256/output/'
 
 basePath='/n/ghernquist/Illustris/Runs/Illustris-1/'
 
-run='L205n2500TNG'
+run='L75n1820TNG'
 
 basePath='/n/hernquistfs3/IllustrisTNG/Runs/'+run+'/output/'
 

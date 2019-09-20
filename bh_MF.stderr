@@ -1,0 +1,12 @@
+generate_SM_HM_relation.py:50: RuntimeWarning: invalid value encountered in true_divide
+  mean = sy / n
+generate_SM_HM_relation.py:52: RuntimeWarning: divide by zero encountered in true_divide
+  std=1/numpy.sqrt(n)
+generate_SM_HM_relation.py:58: RuntimeWarning: invalid value encountered in less
+  mask=(std/mean)*100<100.
+generate_SM_HM_relation.py:50: RuntimeWarning: invalid value encountered in true_divide
+  mean = sy / n
+generate_SM_HM_relation.py:52: RuntimeWarning: divide by zero encountered in true_divide
+  std=1/numpy.sqrt(n)
+generate_SM_HM_relation.py:58: RuntimeWarning: invalid value encountered in less
+  mask=(std/mean)*100<100.
